@@ -30,13 +30,9 @@
   },
   "forwardPorts": [
     8080,
-    7233,
     3000
   ],
   "portsAttributes": {
-    "7233": {
-      "label": "CLI"
-    },
     "8080": {
       "label": "WebUI"
     },
