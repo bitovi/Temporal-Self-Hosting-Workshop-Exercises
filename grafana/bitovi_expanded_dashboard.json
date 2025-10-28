@@ -3147,7 +3147,7 @@
       "type": "row"
     },
     {
-      "collapsed": true,
+      "collapsed": false,
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -3155,438 +3155,435 @@
         "y": 8
       },
       "id": 26,
-      "panels": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "TemporalMetrics"
-          },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisBorderShow": false,
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "barWidthFactor": 0.6,
-                "drawStyle": "line",
-                "fillOpacity": 0,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "insertNulls": false,
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "showPoints": "auto",
-                "showValues": false,
-                "spanNulls": false,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green",
-                    "value": 0
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
-                  }
-                ]
-              }
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 8,
-            "w": 24,
-            "x": 0,
-            "y": 9
-          },
-          "id": 73,
-          "options": {
-            "legend": {
-              "calcs": [],
-              "displayMode": "list",
-              "placement": "bottom",
-              "showLegend": true
-            },
-            "tooltip": {
-              "hideZeros": false,
-              "maxHeight": 600,
-              "mode": "single",
-              "sort": "none"
-            }
-          },
-          "pluginVersion": "12.2.0",
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "TemporalMetrics"
-              },
-              "editorMode": "code",
-              "expr": "sum by (container)(rate(container_cpu_usage_seconds_total{container=\"temporal-history\"}[2m]))",
-              "hide": false,
-              "instant": false,
-              "legendFormat": "__auto",
-              "range": true,
-              "refId": "A"
-            },
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "TemporalMetrics"
-              },
-              "editorMode": "code",
-              "expr": "sum by (container)(rate(container_cpu_usage_seconds_total{container=\"temporal-frontend\"}[2m]))",
-              "hide": false,
-              "instant": false,
-              "legendFormat": "__auto",
-              "range": true,
-              "refId": "B"
-            },
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "TemporalMetrics"
-              },
-              "editorMode": "code",
-              "expr": "sum by (container)(rate(container_cpu_usage_seconds_total{container=\"temporal-matching\"}[2m]))",
-              "hide": false,
-              "instant": false,
-              "legendFormat": "__auto",
-              "range": true,
-              "refId": "C"
-            },
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "TemporalMetrics"
-              },
-              "editorMode": "code",
-              "expr": "sum by (container)(rate(container_cpu_usage_seconds_total{container=\"temporal-worker\"}[2m]))",
-              "hide": false,
-              "instant": false,
-              "legendFormat": "__auto",
-              "range": true,
-              "refId": "D"
-            }
-          ],
-          "title": "Temporal Services Cores Used",
-          "type": "timeseries"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "TemporalMetrics"
-          },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisBorderShow": false,
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "barWidthFactor": 0.6,
-                "drawStyle": "line",
-                "fillOpacity": 0,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "insertNulls": false,
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "showPoints": "auto",
-                "showValues": false,
-                "spanNulls": false,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green",
-                    "value": 0
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
-                  }
-                ]
-              }
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 8,
-            "w": 24,
-            "x": 0,
-            "y": 52
-          },
-          "id": 74,
-          "options": {
-            "legend": {
-              "calcs": [],
-              "displayMode": "list",
-              "placement": "bottom",
-              "showLegend": true
-            },
-            "tooltip": {
-              "hideZeros": false,
-              "maxHeight": 600,
-              "mode": "single",
-              "sort": "none"
-            }
-          },
-          "pluginVersion": "12.2.0",
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "TemporalMetrics"
-              },
-              "editorMode": "code",
-              "expr": "sum by (container) (container_memory_usage_bytes{container=\"temporal-frontend\"}) / 1024 / 1024",
-              "hide": false,
-              "instant": false,
-              "legendFormat": "__auto",
-              "range": true,
-              "refId": "E"
-            },
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "TemporalMetrics"
-              },
-              "editorMode": "code",
-              "expr": "sum by (container) (container_memory_usage_bytes{container=\"temporal-history\"}) / 1024 / 1024",
-              "hide": false,
-              "instant": false,
-              "legendFormat": "__auto",
-              "range": true,
-              "refId": "A"
-            },
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "TemporalMetrics"
-              },
-              "editorMode": "code",
-              "expr": "sum by (container) (container_memory_usage_bytes{container=\"temporal-matching\"}) / 1024 / 1024",
-              "hide": false,
-              "instant": false,
-              "legendFormat": "__auto",
-              "range": true,
-              "refId": "B"
-            },
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "TemporalMetrics"
-              },
-              "editorMode": "code",
-              "expr": "sum by (container) (container_memory_usage_bytes{container=\"temporal-worker\"}) / 1024 / 1024",
-              "hide": false,
-              "instant": false,
-              "legendFormat": "__auto",
-              "range": true,
-              "refId": "C"
-            }
-          ],
-          "title": "Temporal Services Memory used (MiB)",
-          "type": "timeseries"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "TemporalMetrics"
-          },
-          "description": "The number of cluster service restarts, grouped by service, in the time range selected. Frequent restarts indicate underlying issues.",
-          "fieldConfig": {
-            "defaults": {
-              "decimals": 0,
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green",
-                    "value": 0
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
-                  }
-                ]
-              },
-              "unit": "short"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 6,
-            "w": 12,
-            "x": 0,
-            "y": 60
-          },
-          "id": 27,
-          "options": {
-            "displayMode": "gradient",
-            "legend": {
-              "calcs": [],
-              "displayMode": "list",
-              "placement": "bottom",
-              "showLegend": false
-            },
-            "maxVizHeight": 300,
-            "minVizHeight": 16,
-            "minVizWidth": 8,
-            "namePlacement": "auto",
-            "orientation": "auto",
-            "reduceOptions": {
-              "calcs": [
-                "lastNotNull"
-              ],
-              "fields": "",
-              "values": false
-            },
-            "showUnfilled": true,
-            "sizing": "auto",
-            "valueMode": "color"
-          },
-          "pluginVersion": "12.2.0",
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "TemporalMetrics"
-              },
-              "expr": "sum by (temporal_service_type) (increase(restarts{}[$__range]))",
-              "legendFormat": "{{temporal_service_type}}",
-              "refId": "A"
-            }
-          ],
-          "title": "Cluster Service Restarts",
-          "type": "bargauge"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "TemporalMetrics"
-          },
-          "description": "The number of 'resource exhausted' errors, grouped by cause, during the time range selected. Indicates rate limits/system overload.",
-          "fieldConfig": {
-            "defaults": {
-              "decimals": 0,
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green",
-                    "value": 0
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
-                  }
-                ]
-              },
-              "unit": "short"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 6,
-            "w": 12,
-            "x": 12,
-            "y": 60
-          },
-          "id": 28,
-          "options": {
-            "displayMode": "gradient",
-            "legend": {
-              "calcs": [],
-              "displayMode": "list",
-              "placement": "bottom",
-              "showLegend": false
-            },
-            "maxVizHeight": 300,
-            "minVizHeight": 16,
-            "minVizWidth": 8,
-            "namePlacement": "auto",
-            "orientation": "auto",
-            "reduceOptions": {
-              "calcs": [
-                "lastNotNull"
-              ],
-              "fields": "",
-              "values": false
-            },
-            "showUnfilled": true,
-            "sizing": "auto",
-            "valueMode": "color"
-          },
-          "pluginVersion": "12.2.0",
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "TemporalMetrics"
-              },
-              "editorMode": "code",
-              "expr": "sum(rate(service_errors_resource_exhausted{}[2m])) by (resource_exhausted_cause)",
-              "legendFormat": "{{resource_exhausted_cause}}",
-              "range": true,
-              "refId": "B"
-            }
-          ],
-          "title": "Resource Exhausted Errors",
-          "type": "bargauge"
-        }
-      ],
+      "panels": [],
       "title": "Service Health Monitoring",
       "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "TemporalMetrics"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 9
+      },
+      "id": 73,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "maxHeight": 600,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "12.2.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "TemporalMetrics"
+          },
+          "editorMode": "code",
+          "expr": "sum by (container)(rate(container_cpu_usage_seconds_total{container=\"temporal-history\"}[2m]))",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "TemporalMetrics"
+          },
+          "editorMode": "code",
+          "expr": "sum by (container)(rate(container_cpu_usage_seconds_total{container=\"temporal-frontend\"}[2m]))",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "B"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "TemporalMetrics"
+          },
+          "editorMode": "code",
+          "expr": "sum by (container)(rate(container_cpu_usage_seconds_total{container=\"temporal-matching\"}[2m]))",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "C"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "TemporalMetrics"
+          },
+          "editorMode": "code",
+          "expr": "sum by (container)(rate(container_cpu_usage_seconds_total{container=\"temporal-worker\"}[2m]))",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "D"
+        }
+      ],
+      "title": "Temporal Services Cores Used",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "P1E53E98DCFC0B173"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "decmbytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 17
+      },
+      "id": 74,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "maxHeight": 600,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "12.2.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "TemporalMetrics"
+          },
+          "editorMode": "code",
+          "expr": "sum by (container) (container_memory_usage_bytes{container=\"temporal-frontend\"}) / 1024 / 1024",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "E"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "TemporalMetrics"
+          },
+          "editorMode": "code",
+          "expr": "sum by (container) (container_memory_usage_bytes{container=\"temporal-history\"}) / 1024 / 1024",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "TemporalMetrics"
+          },
+          "editorMode": "code",
+          "expr": "sum by (container) (container_memory_usage_bytes{container=\"temporal-matching\"}) / 1024 / 1024",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "B"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "TemporalMetrics"
+          },
+          "editorMode": "code",
+          "expr": "sum by (container) (container_memory_usage_bytes{container=\"temporal-worker\"}) / 1024 / 1024",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "C"
+        }
+      ],
+      "title": "Temporal Services Memory used (MiB)",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "TemporalMetrics"
+      },
+      "description": "The number of cluster service restarts, grouped by service, in the time range selected. Frequent restarts indicate underlying issues.",
+      "fieldConfig": {
+        "defaults": {
+          "decimals": 0,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 12,
+        "x": 0,
+        "y": 25
+      },
+      "id": 27,
+      "options": {
+        "displayMode": "gradient",
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": false
+        },
+        "maxVizHeight": 300,
+        "minVizHeight": 16,
+        "minVizWidth": 8,
+        "namePlacement": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showUnfilled": true,
+        "sizing": "auto",
+        "valueMode": "color"
+      },
+      "pluginVersion": "11.0.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "TemporalMetrics"
+          },
+          "expr": "sum by (temporal_service_type) (increase(restarts{}[$__range]))",
+          "legendFormat": "{{temporal_service_type}}",
+          "refId": "A"
+        }
+      ],
+      "title": "Cluster Service Restarts",
+      "type": "bargauge"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "TemporalMetrics"
+      },
+      "description": "The number of 'resource exhausted' errors, grouped by cause, during the time range selected. Indicates rate limits/system overload.",
+      "fieldConfig": {
+        "defaults": {
+          "decimals": 0,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 12,
+        "x": 12,
+        "y": 25
+      },
+      "id": 28,
+      "options": {
+        "displayMode": "gradient",
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": false
+        },
+        "maxVizHeight": 300,
+        "minVizHeight": 16,
+        "minVizWidth": 8,
+        "namePlacement": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showUnfilled": true,
+        "sizing": "auto",
+        "valueMode": "color"
+      },
+      "pluginVersion": "11.0.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "TemporalMetrics"
+          },
+          "editorMode": "code",
+          "expr": "sum(rate(service_errors_resource_exhausted{}[2m])) by (resource_exhausted_cause)",
+          "legendFormat": "{{resource_exhausted_cause}}",
+          "range": true,
+          "refId": "B"
+        }
+      ],
+      "title": "Resource Exhausted Errors",
+      "type": "bargauge"
     },
     {
       "collapsed": true,
@@ -3594,7 +3591,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 9
+        "y": 31
       },
       "id": 29,
       "panels": [
@@ -3616,7 +3613,6 @@
                 "axisLabel": "",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
-                "barWidthFactor": 0.6,
                 "drawStyle": "line",
                 "fillOpacity": 0,
                 "gradientMode": "none",
@@ -3633,7 +3629,6 @@
                   "type": "linear"
                 },
                 "showPoints": "auto",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -3650,7 +3645,7 @@
                 "steps": [
                   {
                     "color": "green",
-                    "value": 0
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -3717,7 +3712,6 @@
                 "axisLabel": "",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
-                "barWidthFactor": 0.6,
                 "drawStyle": "line",
                 "fillOpacity": 0,
                 "gradientMode": "none",
@@ -3734,7 +3728,6 @@
                   "type": "linear"
                 },
                 "showPoints": "auto",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -3750,7 +3743,7 @@
                 "steps": [
                   {
                     "color": "green",
-                    "value": 0
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -3765,7 +3758,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 29
+            "y": 17
           },
           "id": 70,
           "options": {
@@ -3817,7 +3810,6 @@
                 "axisLabel": "",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
-                "barWidthFactor": 0.6,
                 "drawStyle": "line",
                 "fillOpacity": 0,
                 "gradientMode": "none",
@@ -3834,7 +3826,6 @@
                   "type": "linear"
                 },
                 "showPoints": "auto",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -3850,7 +3841,7 @@
                 "steps": [
                   {
                     "color": "green",
-                    "value": 0
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -3865,7 +3856,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 37
+            "y": 25
           },
           "id": 71,
           "options": {
@@ -3917,7 +3908,6 @@
                 "axisLabel": "",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
-                "barWidthFactor": 0.6,
                 "drawStyle": "line",
                 "fillOpacity": 0,
                 "gradientMode": "none",
@@ -3934,7 +3924,6 @@
                   "type": "linear"
                 },
                 "showPoints": "auto",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -3950,7 +3939,7 @@
                 "steps": [
                   {
                     "color": "green",
-                    "value": 0
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -3965,7 +3954,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 37
+            "y": 25
           },
           "id": 72,
           "options": {
@@ -4010,7 +3999,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 10
+        "y": 32
       },
       "id": 31,
       "panels": [
@@ -4032,7 +4021,6 @@
                 "axisLabel": "",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
-                "barWidthFactor": 0.6,
                 "drawStyle": "line",
                 "fillOpacity": 0,
                 "gradientMode": "none",
@@ -4049,7 +4037,6 @@
                   "type": "linear"
                 },
                 "showPoints": "auto",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -4066,7 +4053,7 @@
                 "steps": [
                   {
                     "color": "green",
-                    "value": 0
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -4146,7 +4133,6 @@
                 "axisLabel": "",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
-                "barWidthFactor": 0.6,
                 "drawStyle": "line",
                 "fillOpacity": 0,
                 "gradientMode": "none",
@@ -4163,7 +4149,6 @@
                   "type": "linear"
                 },
                 "showPoints": "auto",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -4179,7 +4164,7 @@
                 "steps": [
                   {
                     "color": "green",
-                    "value": 0
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -4194,7 +4179,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 29
+            "y": 17
           },
           "id": 90,
           "options": {
@@ -4241,7 +4226,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 11
+        "y": 33
       },
       "id": 33,
       "panels": [
@@ -4260,7 +4245,7 @@
                 "steps": [
                   {
                     "color": "green",
-                    "value": 0
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -4296,7 +4281,7 @@
             "textMode": "auto",
             "wideLayout": true
           },
-          "pluginVersion": "12.2.0",
+          "pluginVersion": "11.0.0",
           "targets": [
             {
               "datasource": {
@@ -4329,7 +4314,6 @@
                 "axisLabel": "",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
-                "barWidthFactor": 0.6,
                 "drawStyle": "line",
                 "fillOpacity": 0,
                 "gradientMode": "none",
@@ -4346,7 +4330,6 @@
                   "type": "linear"
                 },
                 "showPoints": "auto",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -4363,7 +4346,7 @@
                 "steps": [
                   {
                     "color": "green",
-                    "value": 0
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -4429,7 +4412,6 @@
                 "axisLabel": "",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
-                "barWidthFactor": 0.6,
                 "drawStyle": "line",
                 "fillOpacity": 0,
                 "gradientMode": "none",
@@ -4446,7 +4428,6 @@
                   "type": "linear"
                 },
                 "showPoints": "auto",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -4463,7 +4444,7 @@
                 "steps": [
                   {
                     "color": "green",
-                    "value": 0
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -4528,7 +4509,7 @@
                 "steps": [
                   {
                     "color": "green",
-                    "value": 0
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -4564,7 +4545,7 @@
             "textMode": "auto",
             "wideLayout": true
           },
-          "pluginVersion": "12.2.0",
+          "pluginVersion": "11.0.0",
           "targets": [
             {
               "datasource": {
@@ -4589,7 +4570,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 12
+        "y": 34
       },
       "id": 75,
       "panels": [
@@ -4828,6 +4809,5 @@
   },
   "timezone": "browser",
   "title": "Bitovi's expanded dashboard",
-  "uid": "31d964e6",
-  "version": 34
+  "version": 0
 }
