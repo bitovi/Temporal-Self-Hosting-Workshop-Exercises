@@ -2715,7 +2715,7 @@
           "targets": [
             {
               "editorMode": "code",
-              "expr": "sum by (operation, error_type) (rate(client_errors{service_name=\"frontend\",service_role=\"history\"}[5m]))",
+              "expr": "sum by (operation, error_type, service_name) (rate(client_errors{service_name=\"frontend\",service_role=\"history\"}[5m]))",
               "legendFormat": "__auto",
               "range": true,
               "refId": "A"
