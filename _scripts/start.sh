@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+git clone https://github.com/temporalio/benchmark-workers.git
+
 # Start the k3d cluster
 if k3d cluster list | grep -q '^dev\s'; then
   echo "k3d cluster 'dev' already exists"

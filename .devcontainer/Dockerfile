@@ -28,3 +28,6 @@ RUN curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/s
 RUN curl -fsSL "https://temporal.download/cli/archive/latest?platform=linux&arch=${TARGETARCH}" \
     | tar -xz -C /usr/local/bin temporal \
     && chmod +x /usr/local/bin/temporal
+
+RUN sudo apt install snapd && \
+    sudo snap install go --classic
