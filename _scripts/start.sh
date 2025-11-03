@@ -21,7 +21,7 @@ else
   helm repo add bitnami https://charts.bitnami.com/bitnami
   echo "Installing PostgreSQL via Helm chart..."
   helm install postgresql bitnami/postgresql --version 18.1.2 \
-      -f .devcontainer/postgres-values.yaml \
+      -f helm/postgres-values.yaml \
       --wait --timeout 5m
 
   # Add the Temporal Helm repository
@@ -33,11 +33,11 @@ else
   fi
 
   helm template temporal temporalio/temporal --version 0.68.1 \
-      -f .devcontainer/temporal-values.yaml > /workspaces/.temporal/manifest.yaml
+      -f helm/temporal-values.yaml > /workspaces/.temporal/manifest.yaml
 
   # Install Temporal using Helm
   echo "Installing Temporal via Helm chart..."
   helm install temporal temporalio/temporal --version 0.68.1 \
-      -f .devcontainer/temporal-values.yaml \
+      -f helm/temporal-values.yaml \
       --wait --timeout 5m
 fi

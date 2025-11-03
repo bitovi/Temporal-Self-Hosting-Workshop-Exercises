@@ -25,7 +25,7 @@
   "containerEnv": {
     "KUBECONFIG": "/workspaces/.kube/dev.yaml",
   },
-  "postStartCommand": "/bin/bash -lc '.devcontainer/start.sh'",
+  "postStartCommand": "/bin/bash -lc '_scripts/start.sh'",
   "customizations": {
     "vscode": {
       "extensions": ["ms-kubernetes-tools.vscode-kubernetes-tools"]
