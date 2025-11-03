@@ -13,6 +13,17 @@ RUN mkdir -p /workspaces/.kube \
 RUN mkdir -p /workspaces/.temporal \
     && chmod 777 /workspaces/.temporal
 
+# Install Go
+ARG GO_VERSION=1.23.3
+RUN curl -fsSL "https://go.dev/dl/go${GO_VERSION}.linux-${TARGETARCH}.tar.gz" \
+    | tar -xz -C /usr/local \
+    && ln -s /usr/local/go/bin/go /usr/local/bin/go \
+    && ln -s /usr/local/go/bin/gofmt /usr/local/bin/gofmt
+
+ENV PATH="/usr/local/go/bin:${PATH}"
+ENV GOPATH="/go"
+ENV PATH="${GOPATH}/bin:${PATH}"
+
 RUN curl -fsSL -o /usr/local/bin/kubectl \
       "https://dl.k8s.io/release/$(curl -fsSL https://dl.k8s.io/release/stable.txt)/bin/linux/${TARGETARCH}/kubectl" \
  && chmod +x /usr/local/bin/kubectl
@@ -28,6 +39,3 @@ RUN curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/s
 RUN curl -fsSL "https://temporal.download/cli/archive/latest?platform=linux&arch=${TARGETARCH}" \
     | tar -xz -C /usr/local/bin temporal \
     && chmod +x /usr/local/bin/temporal
-
-RUN sudo apt install snapd && \
-    sudo snap install go --classic
