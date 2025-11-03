@@ -11,6 +11,8 @@ else
     -p "8080:30080@server:0" \
     -p "7233:30233@server:0" \
     -p "3000:30000@server:0" \
+    -p "8233:31233@server:0" \
+    -p "8181:31080@server:0" \
     --wait --timeout 120s
 
   # Generate the kubeconfig for the cluster

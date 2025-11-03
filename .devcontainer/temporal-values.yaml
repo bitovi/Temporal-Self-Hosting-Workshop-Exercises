@@ -27,6 +27,20 @@ server:
           maxConns: 20
           maxIdleConns: 20
           maxConnLifetime: "1h"
+    clusterMetadata:
+      enableGlobalNamespace: true
+      failoverVersionIncrement: 10
+      masterClusterName: "temporal"
+      currentClusterName: "temporal"
+      clusterInformation:
+        temporal:
+          enabled: true
+          initialFailoverVersion: 1
+          rpcAddress: "temporal-frontend:7233"
+        mc-temporal:
+          enabled: true
+          initialFailoverVersion: 2
+          rpcAddress: "mc-temporal-frontend:7233"
   frontend:
     service:
       type: NodePort

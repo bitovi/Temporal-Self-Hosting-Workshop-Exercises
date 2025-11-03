@@ -1,0 +1,58 @@
+server:
+  replicaCount: 1
+  image:
+    tag: 1.28.0
+  config:
+    numHistoryShards: 256
+    persistence:
+      default:
+        driver: "sql"
+        sql:
+          driver: "postgres12"
+          host: postgresql.default.svc.cluster.local
+          port: 5432
+          database: temporal_persistence
+          user: temporal
+          password: temporal
+          maxConns: 20
+          maxIdleConns: 20
+          maxConnLifetime: "1h"
+      visibility:
+        driver: "sql"
+        sql:
+          driver: "postgres12"
+          host: postgresql.default.svc.cluster.local
+          port: 5432
+          database: temporal_visibility
+          user: temporal
+          password: temporal
+          maxConns: 20
+          maxIdleConns: 20
+          maxConnLifetime: "1h"
+    clusterMetadata:
+      <Add cluster Metadata here>
+  frontend:
+    service:
+      type: NodePort
+      port: 7233
+      httpPort: 7243
+      targetPort: 7233
+      nodePort: 31233
+
+web:
+  service:
+    type: NodePort
+    port: 8080
+    targetPort: 8080
+    nodePort: 31080
+
+cassandra:
+  enabled: false
+elasticsearch:
+  enabled: false
+
+grafana:
+  enabled: false
+
+prometheus:
+  enabled: false
