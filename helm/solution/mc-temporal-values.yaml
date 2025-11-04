@@ -3,7 +3,7 @@ server:
   image:
     tag: 1.28.0
   config:
-    numHistoryShards: 256
+    numHistoryShards: 1024
     persistence:
       default:
         driver: "sql"
