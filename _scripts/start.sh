@@ -28,9 +28,8 @@ else
 
   chmod 666 /workspaces/.kube/dev.yaml
 
-
-  sudo docker exec k3d-dev-server-0 mkdir -p /mnt/storage/temporal_archival
-  sudo docker exec k3d-dev-server-0 chmod 777 /mnt/storage/temporal_archival
+  docker exec k3d-dev-server-0 mkdir -p /mnt/storage/temporal_archival
+  docker exec k3d-dev-server-0 chmod 777 /mnt/storage/temporal_archival
   kubectl apply -f infra/shared-volume.yml
 
   helm repo add bitnami https://charts.bitnami.com/bitnami
