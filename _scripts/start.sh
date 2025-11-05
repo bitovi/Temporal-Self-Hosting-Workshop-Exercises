@@ -1,13 +1,18 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-git clone https://github.com/temporalio/benchmark-workers.git
+if [[ ! -d ./benchmark-workers ]]; then
+  echo "Cloning benchmark-workers repository..."
+  git clone https://github.com/temporalio/benchmark-workers.git
+fi
 
 # Start the k3d cluster
 if k3d cluster list | grep -q '^dev\s'; then
   echo "k3d cluster 'dev' already exists"
   k3d cluster start dev
 else
+  mkdir -p /tmp/k3d-storage
+
   # Map host ports -> cluster nodeports
   k3d cluster create dev \
     -p "8080:30080@server:0" \
@@ -15,10 +20,18 @@ else
     -p "3000:30000@server:0" \
     -p "8233:31233@server:0" \
     -p "8181:31080@server:0" \
+    --volume /tmp/k3d-storage:/mnt/storage@all \
     --wait --timeout 120s
 
   # Generate the kubeconfig for the cluster
   k3d kubeconfig get dev > /workspaces/.kube/dev.yaml
+
+  chmod 666 /workspaces/.kube/dev.yaml
+
+
+  sudo docker exec k3d-dev-server-0 mkdir -p /mnt/storage/temporal_archival
+  sudo docker exec k3d-dev-server-0 chmod 777 /mnt/storage/temporal_archival
+  kubectl apply -f infra/shared-volume.yml
 
   helm repo add bitnami https://charts.bitnami.com/bitnami
   echo "Installing PostgreSQL via Helm chart..."

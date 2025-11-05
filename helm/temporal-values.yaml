@@ -41,6 +41,40 @@ server:
           enabled: true
           initialFailoverVersion: 2
           rpcAddress: "mc-temporal-frontend:7233"
+  
+  archival:
+    history:
+      state: 'enabled'
+      enableRead: true
+      provider:
+        filestore:
+          fileMode: '0666'
+          dirMode: '0766'
+    visibility:
+      state: 'enabled'
+      enableRead: true
+      provider:
+        filestore:
+          fileMode: '0666'
+          dirMode: '0766'
+  
+  additionalVolumes:
+    - name: shared-volume
+      persistentVolumeClaim:
+        claimName: shared-pvc
+  additionalVolumeMounts:
+    - name: shared-volume
+      mountPath: /tmp/temporal_archival
+  
+  namespaceDefaults:
+    archival:
+      history:
+        state: 'enabled'
+        URI: 'file:///tmp/temporal_archival/persistence'
+      visibility:
+        state: 'enabled'
+        URI: 'file:///tmp/temporal_archival/visibility'
+
   frontend:
     service:
       type: NodePort
@@ -54,6 +88,14 @@ web:
     port: 8080
     targetPort: 8080
     nodePort: 30080
+  additionalVolumes:
+    - name: shared-volume
+      persistentVolumeClaim:
+        claimName: shared-pvc
+  additionalVolumeMounts:
+    - name: shared-volume
+      mountPath: /tmp/temporal_archival
+  
 
 cassandra:
   enabled: false
