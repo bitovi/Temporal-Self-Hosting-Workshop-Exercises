@@ -5,6 +5,10 @@ NUMOFREQUESTS=$2
 TYPE=$3
 TEMPORAL_GRPC_ENDPOINT=""
 
+if [[ "$TYPE" == "" ]]; then
+    TYPE="echo"
+fi
+
 echo "Starting runner for cluster: [$CLUSTER], Task Type: [$TYPE]"
 
 if [[ "$CLUSTER" == "temporal" ]];then
@@ -17,7 +21,7 @@ else
 fi
 
 cd benchmark-workers
-if [[ "$TYPE" == "" ]]; then
+if [[ "$TYPE" == "echo" ]]; then
     go run ./cmd/runner \
     -t ExecuteActivity \
     -backoff-factor 1 \
