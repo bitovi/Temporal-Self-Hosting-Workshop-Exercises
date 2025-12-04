@@ -19,6 +19,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
+  "id": 9,
   "links": [],
   "panels": [
     {
@@ -49,7 +50,6 @@
                 "axisLabel": "",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
-                "barWidthFactor": 0.6,
                 "drawStyle": "line",
                 "fillOpacity": 0,
                 "gradientMode": "opacity",
@@ -69,7 +69,6 @@
                   "type": "linear"
                 },
                 "showPoints": "auto",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -86,7 +85,7 @@
                 "steps": [
                   {
                     "color": "green",
-                    "value": 0
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -102,7 +101,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 17
+            "y": 9
           },
           "id": 12,
           "options": {
@@ -153,7 +152,7 @@
                 "steps": [
                   {
                     "color": "green",
-                    "value": 0
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -168,7 +167,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 25
+            "y": 17
           },
           "id": 11,
           "options": {
@@ -186,7 +185,7 @@
             "showThresholdMarkers": true,
             "sizing": "auto"
           },
-          "pluginVersion": "12.2.0",
+          "pluginVersion": "11.0.0",
           "targets": [
             {
               "datasource": {
@@ -221,7 +220,6 @@
                 "axisLabel": "",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
-                "barWidthFactor": 0.6,
                 "drawStyle": "line",
                 "fillOpacity": 0,
                 "gradientMode": "none",
@@ -238,7 +236,6 @@
                   "type": "linear"
                 },
                 "showPoints": "auto",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -255,7 +252,7 @@
                 "steps": [
                   {
                     "color": "green",
-                    "value": 0
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -271,7 +268,7 @@
             "h": 6,
             "w": 24,
             "x": 0,
-            "y": 68
+            "y": 25
           },
           "id": 21,
           "options": {
@@ -323,7 +320,6 @@
                 "axisLabel": "",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
-                "barWidthFactor": 0.6,
                 "drawStyle": "line",
                 "fillOpacity": 0,
                 "gradientMode": "none",
@@ -340,7 +336,6 @@
                   "type": "linear"
                 },
                 "showPoints": "auto",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -357,7 +352,7 @@
                 "steps": [
                   {
                     "color": "green",
-                    "value": 0
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -373,7 +368,7 @@
             "h": 6,
             "w": 24,
             "x": 0,
-            "y": 74
+            "y": 31
           },
           "id": 20,
           "options": {
@@ -436,7 +431,7 @@
                 "steps": [
                   {
                     "color": "green",
-                    "value": 0
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -452,7 +447,7 @@
             "h": 6,
             "w": 8,
             "x": 0,
-            "y": 18
+            "y": 10
           },
           "id": 23,
           "options": {
@@ -472,14 +467,14 @@
             "textMode": "auto",
             "wideLayout": true
           },
-          "pluginVersion": "12.2.0",
+          "pluginVersion": "11.0.0",
           "targets": [
             {
               "datasource": {
                 "type": "prometheus",
                 "uid": "TemporalMetrics"
               },
-              "expr": "sum(rate(service_requests{operation=\"AddActivityTask\"}[$__range]))",
+              "expr": "sum(rate(service_requests{operation=\"AddActivityTask\"}[2m]))",
               "legendFormat": "AddActivityTask",
               "refId": "A"
             }
@@ -502,7 +497,7 @@
                 "steps": [
                   {
                     "color": "green",
-                    "value": 0
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -518,7 +513,7 @@
             "h": 6,
             "w": 8,
             "x": 8,
-            "y": 18
+            "y": 10
           },
           "id": 24,
           "options": {
@@ -538,14 +533,14 @@
             "textMode": "auto",
             "wideLayout": true
           },
-          "pluginVersion": "12.2.0",
+          "pluginVersion": "11.0.0",
           "targets": [
             {
               "datasource": {
                 "type": "prometheus",
                 "uid": "TemporalMetrics"
               },
-              "expr": "sum(rate(service_requests{operation=\"RecordActivityTaskStarted\"}[$__range]))",
+              "expr": "sum(rate(service_requests{operation=\"RecordActivityTaskStarted\"}[2m]))",
               "legendFormat": "RecordActivityTaskStarted",
               "refId": "B"
             }
@@ -568,7 +563,7 @@
                 "steps": [
                   {
                     "color": "green",
-                    "value": 0
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -584,7 +579,7 @@
             "h": 6,
             "w": 8,
             "x": 16,
-            "y": 18
+            "y": 10
           },
           "id": 25,
           "options": {
@@ -604,14 +599,14 @@
             "textMode": "auto",
             "wideLayout": true
           },
-          "pluginVersion": "12.2.0",
+          "pluginVersion": "11.0.0",
           "targets": [
             {
               "datasource": {
                 "type": "prometheus",
                 "uid": "TemporalMetrics"
               },
-              "expr": "sum(rate(service_requests{operation=~\"RespondActivityTaskCompleted|RespondActivityTaskFailed|RespondActivityTaskCanceled\"}[$__range]))",
+              "expr": "sum(rate(service_requests{operation=~\"RespondActivityTaskCompleted|RespondActivityTaskFailed|RespondActivityTaskCanceled\"}[2m]))",
               "legendFormat": "ActivityTask Completed/Failed/Canceled",
               "refId": "C"
             }
@@ -650,7 +645,7 @@
                 "steps": [
                   {
                     "color": "green",
-                    "value": 0
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -666,7 +661,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 19
+            "y": 11
           },
           "id": 3,
           "options": {
@@ -686,14 +681,14 @@
             "textMode": "auto",
             "wideLayout": true
           },
-          "pluginVersion": "12.2.0",
+          "pluginVersion": "11.0.0",
           "targets": [
             {
               "datasource": {
                 "type": "prometheus",
                 "uid": "TemporalMetrics"
               },
-              "expr": "100 - (sum(rate(service_errors{}[$__range]) OR on() vector(0)) / sum(rate(service_requests{}[$__range])) * 100)",
+              "expr": "100 - (sum(rate(service_errors{}[2m]) OR on() vector(0)) / sum(rate(service_requests{}[2m])) * 100)",
               "legendFormat": "Availability",
               "refId": "A"
             }
@@ -718,7 +713,7 @@
                 "steps": [
                   {
                     "color": "green",
-                    "value": 0
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -734,7 +729,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 19
+            "y": 11
           },
           "id": 10,
           "options": {
@@ -754,14 +749,14 @@
             "textMode": "auto",
             "wideLayout": true
           },
-          "pluginVersion": "12.2.0",
+          "pluginVersion": "11.0.0",
           "targets": [
             {
               "datasource": {
                 "type": "prometheus",
                 "uid": "TemporalMetrics"
               },
-              "expr": "100 - (sum(rate(persistence_errors{}[$__range]) OR on() vector(0)) / sum(rate(persistence_requests{}[$__range])) * 100)",
+              "expr": "100 - (sum(rate(persistence_errors{}[2m]) OR on() vector(0)) / sum(rate(persistence_requests{}[2m])) * 100)",
               "legendFormat": "Success %",
               "refId": "E"
             }
@@ -784,7 +779,7 @@
                 "steps": [
                   {
                     "color": "green",
-                    "value": 0
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -800,7 +795,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 62
+            "y": 19
           },
           "id": 4,
           "options": {
@@ -827,7 +822,7 @@
             "sizing": "auto",
             "valueMode": "color"
           },
-          "pluginVersion": "12.2.0",
+          "pluginVersion": "11.0.0",
           "targets": [
             {
               "datasource": {
@@ -859,7 +854,7 @@
                 "steps": [
                   {
                     "color": "green",
-                    "value": 0
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -875,7 +870,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 70
+            "y": 27
           },
           "id": 5,
           "options": {
@@ -902,7 +897,7 @@
             "sizing": "auto",
             "valueMode": "color"
           },
-          "pluginVersion": "12.2.0",
+          "pluginVersion": "11.0.0",
           "targets": [
             {
               "datasource": {
@@ -936,7 +931,7 @@
                 "steps": [
                   {
                     "color": "green",
-                    "value": 0
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -952,7 +947,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 78
+            "y": 35
           },
           "id": 6,
           "options": {
@@ -979,7 +974,7 @@
             "sizing": "auto",
             "valueMode": "color"
           },
-          "pluginVersion": "12.2.0",
+          "pluginVersion": "11.0.0",
           "targets": [
             {
               "datasource": {
@@ -987,7 +982,7 @@
                 "uid": "TemporalMetrics"
               },
               "editorMode": "code",
-              "expr": "sum(increase(service_error_with_type{service_name=\"matching\"}[$__range])) by (error_type)",
+              "expr": "sum(increase(service_error_with_type{service_name=\"matching\"}[2m])) by (error_type)",
               "legendFormat": "{{error_type}}",
               "range": true,
               "refId": "B"
@@ -1011,7 +1006,7 @@
                 "steps": [
                   {
                     "color": "green",
-                    "value": 0
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -1027,7 +1022,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 78
+            "y": 35
           },
           "id": 7,
           "options": {
@@ -1054,7 +1049,7 @@
             "sizing": "auto",
             "valueMode": "color"
           },
-          "pluginVersion": "12.2.0",
+          "pluginVersion": "11.0.0",
           "targets": [
             {
               "datasource": {
@@ -1062,7 +1057,7 @@
                 "uid": "TemporalMetrics"
               },
               "editorMode": "code",
-              "expr": "sum(increase(service_error_with_type{service_name=\"worker\"}[$__range])) by (error_type)",
+              "expr": "sum(increase(service_error_with_type{service_name=\"worker\"}[2m])) by (error_type)",
               "legendFormat": "{{error_type}}",
               "range": true,
               "refId": "B"
@@ -1088,7 +1083,6 @@
                 "axisLabel": "",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
-                "barWidthFactor": 0.6,
                 "drawStyle": "line",
                 "fillOpacity": 0,
                 "gradientMode": "none",
@@ -1105,7 +1099,6 @@
                   "type": "linear"
                 },
                 "showPoints": "auto",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -1121,7 +1114,7 @@
                 "steps": [
                   {
                     "color": "green",
-                    "value": 0
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -1136,7 +1129,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 86
+            "y": 43
           },
           "id": 38,
           "options": {
@@ -1188,7 +1181,6 @@
                 "axisLabel": "",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
-                "barWidthFactor": 0.6,
                 "drawStyle": "line",
                 "fillOpacity": 10,
                 "gradientMode": "none",
@@ -1205,7 +1197,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -1221,7 +1212,7 @@
                 "steps": [
                   {
                     "color": "green",
-                    "value": 0
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -1237,7 +1228,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 86
+            "y": 43
           },
           "id": 67,
           "options": {
@@ -1313,7 +1304,6 @@
                 "axisLabel": "",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
-                "barWidthFactor": 0.6,
                 "drawStyle": "line",
                 "fillOpacity": 0,
                 "gradientMode": "none",
@@ -1330,7 +1320,6 @@
                   "type": "linear"
                 },
                 "showPoints": "auto",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -1346,7 +1335,7 @@
                 "steps": [
                   {
                     "color": "green",
-                    "value": 0
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -1362,7 +1351,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 94
+            "y": 51
           },
           "id": 92,
           "options": {
@@ -1374,6 +1363,7 @@
             },
             "tooltip": {
               "hideZeros": false,
+              "maxHeight": 600,
               "mode": "single",
               "sort": "none"
             }
@@ -1428,7 +1418,6 @@
                 "axisLabel": "",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
-                "barWidthFactor": 0.6,
                 "drawStyle": "line",
                 "fillOpacity": 0,
                 "gradientMode": "none",
@@ -1445,7 +1434,6 @@
                   "type": "linear"
                 },
                 "showPoints": "auto",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -1462,7 +1450,7 @@
                 "steps": [
                   {
                     "color": "green",
-                    "value": 0
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -1478,7 +1466,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 20
+            "y": 12
           },
           "id": 9,
           "options": {
@@ -1530,7 +1518,6 @@
                 "axisLabel": "",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
-                "barWidthFactor": 0.6,
                 "drawStyle": "line",
                 "fillOpacity": 0,
                 "gradientMode": "none",
@@ -1547,7 +1534,6 @@
                   "type": "linear"
                 },
                 "showPoints": "auto",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -1564,7 +1550,7 @@
                 "steps": [
                   {
                     "color": "green",
-                    "value": 0
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -1580,7 +1566,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 63
+            "y": 20
           },
           "id": 68,
           "options": {
@@ -1605,7 +1591,7 @@
                 "uid": "TemporalMetrics"
               },
               "editorMode": "code",
-              "expr": "histogram_quantile(0.95, sum(rate(service_latency_bucket{service_name=\"matching\"}[$__range])) by (operation, le))",
+              "expr": "histogram_quantile(0.95, sum(rate(service_latency_bucket{service_name=\"matching\"}[2m])) by (operation, le))",
               "legendFormat": "{{operation}}",
               "range": true,
               "refId": "C"
@@ -1632,7 +1618,6 @@
                 "axisLabel": "",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
-                "barWidthFactor": 0.6,
                 "drawStyle": "line",
                 "fillOpacity": 0,
                 "gradientMode": "none",
@@ -1649,7 +1634,6 @@
                   "type": "linear"
                 },
                 "showPoints": "auto",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -1666,7 +1650,7 @@
                 "steps": [
                   {
                     "color": "green",
-                    "value": 0
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -1682,7 +1666,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 71
+            "y": 28
           },
           "id": 69,
           "options": {
@@ -1707,7 +1691,7 @@
                 "uid": "TemporalMetrics"
               },
               "editorMode": "code",
-              "expr": "histogram_quantile(0.95, sum(rate(service_latency_bucket{service_name=\"history\"}[$__range])) by (operation, le))",
+              "expr": "histogram_quantile(0.95, sum(rate(service_latency_bucket{service_name=\"history\"}[2m])) by (operation, le))",
               "legendFormat": "{{operation}}",
               "range": true,
               "refId": "C"
@@ -1748,7 +1732,6 @@
                 "axisLabel": "",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
-                "barWidthFactor": 0.6,
                 "drawStyle": "line",
                 "fillOpacity": 0,
                 "gradientMode": "none",
@@ -1765,7 +1748,6 @@
                   "type": "linear"
                 },
                 "showPoints": "auto",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -1782,7 +1764,7 @@
                 "steps": [
                   {
                     "color": "green",
-                    "value": 0
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -1798,7 +1780,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 21
+            "y": 13
           },
           "id": 15,
           "options": {
@@ -1822,7 +1804,7 @@
                 "type": "prometheus",
                 "uid": "TemporalMetrics"
               },
-              "expr": "sum by (operation) (rate(service_requests{operation=~\"StartWorkflowExecution|SignalWorkflowExecution|SignalWithStartWorkflowExecution\"}[$__range]))",
+              "expr": "sum by (operation) (rate(service_requests{operation=~\"StartWorkflowExecution|SignalWorkflowExecution|SignalWithStartWorkflowExecution\"}[2m]))",
               "legendFormat": "{{operation}}",
               "refId": "H"
             }
@@ -1908,12 +1890,12 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 8,
+        "h": 9,
         "w": 24,
         "x": 0,
         "y": 6
       },
-      "id": 93,
+      "id": 96,
       "options": {
         "legend": {
           "calcs": [],
@@ -1934,14 +1916,14 @@
             "uid": "P1E53E98DCFC0B173"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.95, sum by (namespace, le)(rate(activity_start_to_close_latency_bucket[2m])))",
+          "expr": "histogram_quantile(0.95, sum by (namespace, le, task_type)(rate(task_schedule_to_start_latency_bucket{}[2m])))",
           "instant": false,
-          "legendFormat": "{{namespace}}",
+          "legendFormat": "{{namespace}} - {{ task_type }}",
           "range": true,
           "refId": "A"
         }
       ],
-      "title": "Execution Duration by namespace",
+      "title": "schedule to start 95% latency by (namespace - task_type)",
       "type": "timeseries"
     },
     {
@@ -2008,9 +1990,9 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 14
+        "y": 15
       },
-      "id": 94,
+      "id": 93,
       "options": {
         "legend": {
           "calcs": [],
@@ -2031,213 +2013,112 @@
             "uid": "P1E53E98DCFC0B173"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.95, sum by (namespace, le)(rate(task_schedule_to_start_latency_bucket[2m])))",
+          "expr": "histogram_quantile(0.95, sum by (namespace, le)(rate(activity_start_to_close_latency_bucket[2m])))",
+          "instant": false,
+          "legendFormat": "{{namespace}}",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "95% latency of activity start to close duration",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "P1E53E98DCFC0B173"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "s"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 24,
+        "x": 0,
+        "y": 23
+      },
+      "id": 95,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "maxHeight": 600,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P1E53E98DCFC0B173"
+          },
+          "editorMode": "code",
+          "expr": "histogram_quantile(0.95, sum(rate(workflow_duration_bucket{}[2m])) by (le, namespace, taskqueue))",
           "instant": false,
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
         }
       ],
-      "title": "Workflow schedule to start latency",
+      "title": "95% latency of Workflow schedule to close duration",
       "type": "timeseries"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "TemporalMetrics"
-      },
-      "description": "The number of workflows in the time range selected that exceeded schedule-to-close timeout. Indicates workflows may not be completing due to slowdowns.",
-      "fieldConfig": {
-        "defaults": {
-          "decimals": 0,
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "short"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 6,
-        "w": 12,
-        "x": 0,
-        "y": 22
-      },
-      "id": 19,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "percentChangeColorMode": "standard",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "showPercentChange": false,
-        "textMode": "auto",
-        "wideLayout": true
-      },
-      "pluginVersion": "11.0.0",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "TemporalMetrics"
-          },
-          "expr": "sum(rate(start_to_close_timeout{operation=\"TimerActiveTaskWorkflowTimeout\"}[$__range]))",
-          "legendFormat": "ScheduleToCloseTimeout",
-          "refId": "C"
-        }
-      ],
-      "title": "ScheduleToClose Timeout (rate)",
-      "type": "stat"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "TemporalMetrics"
-      },
-      "description": "The number of workflows in the time range selected that exceeded maximum schedule-to-start timeout. Indicates if workers are busy or unavailable.",
-      "fieldConfig": {
-        "defaults": {
-          "decimals": 0,
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "short"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 6,
-        "w": 12,
-        "x": 12,
-        "y": 22
-      },
-      "id": 18,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "percentChangeColorMode": "standard",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "showPercentChange": false,
-        "textMode": "auto",
-        "wideLayout": true
-      },
-      "pluginVersion": "11.0.0",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "TemporalMetrics"
-          },
-          "expr": "sum(rate(schedule_to_start_timeout{operation=\"TimerActiveTaskWorkflowTimeout\"}[$__range]))",
-          "legendFormat": "ScheduleToStartTimeout",
-          "refId": "B"
-        }
-      ],
-      "title": "ScheduleToStart Timeout (rate)",
-      "type": "stat"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "TemporalMetrics"
-      },
-      "description": "The number of gRPC requests to add new workflows in the time range selected. Monitor with 'RecordWorkflowTaskStarted', 'RespondWorkflowTaskCompleted', and 'RespondWorkflowTaskFailed' to observe expected state transitions.",
-      "fieldConfig": {
-        "defaults": {
-          "decimals": 0,
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "short"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 6,
-        "w": 12,
-        "x": 0,
-        "y": 28
-      },
-      "id": 17,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "percentChangeColorMode": "standard",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "showPercentChange": false,
-        "textMode": "auto",
-        "wideLayout": true
-      },
-      "pluginVersion": "11.0.0",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "TemporalMetrics"
-          },
-          "expr": "sum(rate(service_requests{operation=\"AddWorkflowTask\"}[$__range]))",
-          "legendFormat": "AddWorkflowTask",
-          "refId": "A"
-        }
-      ],
-      "title": "AddWorkflowTask Requests (rate)",
-      "type": "stat"
     },
     {
       "collapsed": true,
@@ -2245,7 +2126,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 34
+        "y": 32
       },
       "id": 79,
       "panels": [
@@ -2266,7 +2147,6 @@
                 "axisLabel": "",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
-                "barWidthFactor": 0.6,
                 "drawStyle": "line",
                 "fillOpacity": 0,
                 "gradientMode": "none",
@@ -2283,7 +2163,6 @@
                   "type": "linear"
                 },
                 "showPoints": "auto",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -2299,7 +2178,7 @@
                 "steps": [
                   {
                     "color": "green",
-                    "value": 0
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -2314,7 +2193,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 23
+            "y": 15
           },
           "id": 78,
           "options": {
@@ -2380,7 +2259,6 @@
                 "axisLabel": "",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
-                "barWidthFactor": 0.6,
                 "drawStyle": "line",
                 "fillOpacity": 0,
                 "gradientMode": "none",
@@ -2397,7 +2275,6 @@
                   "type": "linear"
                 },
                 "showPoints": "auto",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -2413,7 +2290,7 @@
                 "steps": [
                   {
                     "color": "green",
-                    "value": 0
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -2453,7 +2330,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 23
+            "y": 15
           },
           "id": 80,
           "options": {
@@ -2520,7 +2397,6 @@
                 "axisLabel": "",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
-                "barWidthFactor": 0.6,
                 "drawStyle": "line",
                 "fillOpacity": 0,
                 "gradientMode": "none",
@@ -2537,7 +2413,6 @@
                   "type": "linear"
                 },
                 "showPoints": "auto",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -2553,7 +2428,7 @@
                 "steps": [
                   {
                     "color": "green",
-                    "value": 0
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -2569,7 +2444,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 66
+            "y": 23
           },
           "id": 81,
           "options": {
@@ -2621,7 +2496,6 @@
                 "axisLabel": "",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
-                "barWidthFactor": 0.6,
                 "drawStyle": "line",
                 "fillOpacity": 0,
                 "gradientMode": "none",
@@ -2638,7 +2512,6 @@
                   "type": "linear"
                 },
                 "showPoints": "auto",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -2654,7 +2527,7 @@
                 "steps": [
                   {
                     "color": "green",
-                    "value": 0
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -2670,7 +2543,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 66
+            "y": 23
           },
           "id": 82,
           "options": {
@@ -2722,7 +2595,6 @@
                 "axisLabel": "",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
-                "barWidthFactor": 0.6,
                 "drawStyle": "line",
                 "fillOpacity": 0,
                 "gradientMode": "none",
@@ -2739,7 +2611,6 @@
                   "type": "linear"
                 },
                 "showPoints": "auto",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -2755,7 +2626,7 @@
                 "steps": [
                   {
                     "color": "green",
-                    "value": 0
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -2770,7 +2641,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 74
+            "y": 31
           },
           "id": 83,
           "options": {
@@ -2817,7 +2688,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 35
+        "y": 33
       },
       "id": 84,
       "panels": [
@@ -2838,7 +2709,6 @@
                 "axisLabel": "",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
-                "barWidthFactor": 0.6,
                 "drawStyle": "line",
                 "fillOpacity": 0,
                 "gradientMode": "none",
@@ -2855,7 +2725,6 @@
                   "type": "linear"
                 },
                 "showPoints": "auto",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -2871,7 +2740,7 @@
                 "steps": [
                   {
                     "color": "green",
-                    "value": 0
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -2887,7 +2756,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 24
+            "y": 16
           },
           "id": 91,
           "options": {
@@ -2899,6 +2768,7 @@
             },
             "tooltip": {
               "hideZeros": false,
+              "maxHeight": 600,
               "mode": "single",
               "sort": "none"
             }
@@ -2933,7 +2803,6 @@
                 "axisLabel": "",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
-                "barWidthFactor": 0.6,
                 "drawStyle": "line",
                 "fillOpacity": 0,
                 "gradientMode": "none",
@@ -2950,7 +2819,6 @@
                   "type": "linear"
                 },
                 "showPoints": "auto",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -2966,7 +2834,7 @@
                 "steps": [
                   {
                     "color": "green",
-                    "value": 0
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -2981,7 +2849,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 24
+            "y": 16
           },
           "id": 86,
           "options": {
@@ -3033,7 +2901,6 @@
                 "axisLabel": "",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
-                "barWidthFactor": 0.6,
                 "drawStyle": "line",
                 "fillOpacity": 0,
                 "gradientMode": "none",
@@ -3050,7 +2917,6 @@
                   "type": "linear"
                 },
                 "showPoints": "auto",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -3066,7 +2932,7 @@
                 "steps": [
                   {
                     "color": "green",
-                    "value": 0
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -3082,7 +2948,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 67
+            "y": 24
           },
           "id": 85,
           "options": {
@@ -3136,7 +3002,6 @@
                 "axisLabel": "",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
-                "barWidthFactor": 0.6,
                 "drawStyle": "line",
                 "fillOpacity": 0,
                 "gradientMode": "none",
@@ -3153,7 +3018,6 @@
                   "type": "linear"
                 },
                 "showPoints": "auto",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -3169,7 +3033,7 @@
                 "steps": [
                   {
                     "color": "green",
-                    "value": 0
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -3185,7 +3049,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 67
+            "y": 24
           },
           "id": 89,
           "options": {
@@ -3250,7 +3114,6 @@
                 "axisLabel": "",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
-                "barWidthFactor": 0.6,
                 "drawStyle": "line",
                 "fillOpacity": 0,
                 "gradientMode": "none",
@@ -3267,7 +3130,6 @@
                   "type": "linear"
                 },
                 "showPoints": "auto",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -3283,7 +3145,7 @@
                 "steps": [
                   {
                     "color": "green",
-                    "value": 0
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -3299,7 +3161,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 75
+            "y": 32
           },
           "id": 87,
           "options": {
@@ -3344,7 +3206,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 36
+        "y": 34
       },
       "id": 26,
       "panels": [
@@ -3395,8 +3257,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -3534,8 +3395,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -3640,8 +3500,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -3691,7 +3550,7 @@
                 "type": "prometheus",
                 "uid": "TemporalMetrics"
               },
-              "expr": "sum by (temporal_service_type) (increase(restarts{}[$__range]))",
+              "expr": "sum by (temporal_service_type) (increase(restarts{}[2m]))",
               "legendFormat": "{{temporal_service_type}}",
               "refId": "A"
             }
@@ -3713,8 +3572,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -3784,7 +3642,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 37
+        "y": 35
       },
       "id": 29,
       "panels": [
@@ -4188,7 +4046,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 38
+        "y": 36
       },
       "id": 31,
       "panels": [
@@ -4413,7 +4271,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 39
+        "y": 37
       },
       "id": 33,
       "panels": [
@@ -4474,7 +4332,7 @@
                 "type": "prometheus",
                 "uid": "TemporalMetrics"
               },
-              "expr": "avg_over_time(temporal_worker_task_slots_available{namespace=\"default\",worker_type=\"WorkflowWorker\"}[$__range])",
+              "expr": "avg_over_time(temporal_worker_task_slots_available{namespace=\"default\",worker_type=\"WorkflowWorker\"}[2m])",
               "legendFormat": "Slots Available",
               "refId": "E"
             }
@@ -4571,7 +4429,7 @@
                 "type": "prometheus",
                 "uid": "TemporalMetrics"
               },
-              "expr": "sum by (namespace, task_queue) (rate(temporal_workflow_task_schedule_to_start_latency_seconds_bucket{}[$__range]))",
+              "expr": "sum by (namespace, task_queue) (rate(temporal_workflow_task_schedule_to_start_latency_seconds_bucket{}[2m]))",
               "legendFormat": "{{namespace}}:{{task_queue}}",
               "refId": "F"
             }
@@ -4668,7 +4526,7 @@
                 "type": "prometheus",
                 "uid": "TemporalMetrics"
               },
-              "expr": "sum by (namespace, task_queue) (rate(temporal_activity_schedule_to_start_latency_seconds_bucket{}[$__range]))",
+              "expr": "sum by (namespace, task_queue) (rate(temporal_activity_schedule_to_start_latency_seconds_bucket{}[2m]))",
               "legendFormat": "{{namespace}}:{{task_queue}}",
               "refId": "G"
             }
@@ -4735,7 +4593,7 @@
                 "type": "prometheus",
                 "uid": "TemporalMetrics"
               },
-              "expr": "sum(rate(poll_success_sync{}[$__range])) / sum(rate(poll_success{}[$__range]))",
+              "expr": "sum(rate(poll_success_sync{}[2m])) / sum(rate(poll_success{}[2m]))",
               "legendFormat": "SyncMatchRate",
               "refId": "H"
             }
@@ -4753,7 +4611,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 40
+        "y": 38
       },
       "id": 75,
       "panels": [
@@ -4774,7 +4632,6 @@
                 "axisLabel": "",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
-                "barWidthFactor": 0.6,
                 "drawStyle": "line",
                 "fillOpacity": 0,
                 "gradientMode": "none",
@@ -4791,7 +4648,6 @@
                   "type": "linear"
                 },
                 "showPoints": "auto",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -4806,8 +4662,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -4875,7 +4730,6 @@
                 "axisLabel": "",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
-                "barWidthFactor": 0.6,
                 "drawStyle": "line",
                 "fillOpacity": 0,
                 "gradientMode": "none",
@@ -4892,7 +4746,6 @@
                   "type": "linear"
                 },
                 "showPoints": "auto",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -4907,8 +4760,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -4964,7 +4816,7 @@
       "type": "row"
     }
   ],
-  "refresh": "auto",
+  "refresh": "5s",
   "schemaVersion": 39,
   "tags": [
     "temporal",
@@ -4974,7 +4826,7 @@
     "list": []
   },
   "time": {
-    "from": "now-1h",
+    "from": "now-15m",
     "to": "now"
   },
   "timeRangeUpdatedDuringEditOrView": false,
@@ -4993,6 +4845,6 @@
   "timezone": "browser",
   "title": "Bitovi's expanded dashboard",
   "uid": "ff5eogz6opmv4b",
-  "version": 1,
+  "version": 5,
   "weekStart": ""
 }
