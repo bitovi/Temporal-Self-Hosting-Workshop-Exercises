@@ -47,10 +47,10 @@ else
   fi
 
   helm template temporal temporalio/temporal --version 0.68.1 \
-      -f helm/temporal-values.yaml > /workspaces/.temporal/manifest.yaml
+      -f helm/cluster-1-temporal-values.yaml > ./manifest.yaml
 
   # Install Temporal using Helm
   echo "Installing Temporal via Helm chart..."
   helm install cluster-1 temporalio/temporal --version 0.68.1 \
-      -f helm/temporal-values.yaml
+      -f helm/cluster-1-temporal-values.yaml
 fi

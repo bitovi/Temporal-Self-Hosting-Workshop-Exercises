@@ -11,7 +11,7 @@ server:
           driver: "postgres12"
           host: postgresql.default.svc.cluster.local
           port: 5432
-          database: mc_temporal_persistence
+          database: temporal_persistence_2
           user: temporal
           password: temporal
           maxConns: 20
@@ -23,7 +23,7 @@ server:
           driver: "postgres12"
           host: postgresql.default.svc.cluster.local
           port: 5432
-          database: mc_temporal_visibility
+          database: temporal_visibility_2
           user: temporal
           password: temporal
           maxConns: 20
@@ -38,11 +38,11 @@ server:
         cluster-1:
           enabled: true
           initialFailoverVersion: 1
-          rpcAddress: "cluster-1-frontend:7233"
+          rpcAddress: "cluster-1-temporal-frontend:7233"
         cluster-2:
           enabled: true
           initialFailoverVersion: 2
-          rpcAddress: "cluster-2-frontend:7233"
+          rpcAddress: "cluster-2-temporal-frontend:7233"
   frontend:
     service:
       type: NodePort
