@@ -52,6 +52,5 @@ else
   # Install Temporal using Helm
   echo "Installing Temporal via Helm chart..."
   helm install temporal temporalio/temporal --version 0.68.1 \
-      -f helm/temporal-values.yaml \
-      --wait --timeout 5m
+      -f helm/temporal-values.yaml
 fi

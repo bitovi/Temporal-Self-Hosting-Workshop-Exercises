@@ -13,3 +13,6 @@ primary:
     limits:
       memory: 4Gi
       cpu: 500m
+  extendedConfiguration: |
+        max_connections = 250
+
