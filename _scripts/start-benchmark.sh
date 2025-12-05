@@ -1,9 +1,11 @@
-#!/bin/bash
+#! /bin/bash
 
 CLUSTER=$1
 NUMOFREQUESTS=$2
 TYPE=$3
 TEMPORAL_GRPC_ENDPOINT=""
+
+export TEMPORAL_NAMESPACE=workshop
 
 if [[ "$TYPE" == "" ]]; then
     TYPE="echo"
@@ -11,9 +13,9 @@ fi
 
 echo "Starting runner for cluster: [$CLUSTER], Task Type: [$TYPE]"
 
-if [[ "$CLUSTER" == "temporal" ]];then
+if [[ "$CLUSTER" == "cluster-1" ]];then
     export TEMPORAL_GRPC_ENDPOINT=127.0.0.1:7233
-elif [[ "$CLUSTER" == "mc-temporal" ]]; then
+elif [[ "$CLUSTER" == "cluster-2" ]]; then
     export TEMPORAL_GRPC_ENDPOINT=127.0.0.1:8233
 else
     echo "Unknown cluster"

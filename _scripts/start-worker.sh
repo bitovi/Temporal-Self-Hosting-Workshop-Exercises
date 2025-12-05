@@ -1,13 +1,13 @@
-#!/bin/bash
+#! /bin/bash
 
 CLUSTER=$1
 PORT=""
 
 echo "Starting worker for cluster: [$CLUSTER]"
 
-if [[ "$CLUSTER" == "temporal" ]];then
+if [[ "$CLUSTER" == "cluster-1" ]];then
     PORT=7233
-elif [[ "$CLUSTER" == "mc-temporal" ]]; then
+elif [[ "$CLUSTER" == "cluster-2" ]]; then
     PORT=8233
 else
     echo "Unknown cluster"
@@ -15,7 +15,7 @@ else
 fi
 
 export TEMPORAL_GRPC_ENDPOINT=127.0.0.1:$PORT
-export TEMPORAL_NAMESPACE=default
+export TEMPORAL_NAMESPACE=workshop
 export TEMPORAL_TASK_QUEUE=benchmark
 export TEMPORAL_WORKFLOW_TASK_POLLERS=16
 export TEMPORAL_ACTIVITY_TASK_POLLERS=8

@@ -30,17 +30,17 @@ server:
     clusterMetadata:
       enableGlobalNamespace: true
       failoverVersionIncrement: 10
-      masterClusterName: "temporal"
-      currentClusterName: "temporal"
+      masterClusterName: "cluster-1"
+      currentClusterName: "cluster-1"
       clusterInformation:
-        temporal:
+        cluster-1:
           enabled: true
           initialFailoverVersion: 1
-          rpcAddress: "temporal-frontend:7233"
-        mc-temporal:
+          rpcAddress: "cluster-1-frontend:7233"
+        cluster-2:
           enabled: true
           initialFailoverVersion: 2
-          rpcAddress: "mc-temporal-frontend:7233"
+          rpcAddress: "cluster-2-frontend:7233"
   
   archival:
     history:

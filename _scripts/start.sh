@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#! /bin/bash
 set -euo pipefail
 
 if [[ ! -d ./benchmark-workers ]]; then
@@ -51,6 +51,6 @@ else
 
   # Install Temporal using Helm
   echo "Installing Temporal via Helm chart..."
-  helm install temporal temporalio/temporal --version 0.68.1 \
+  helm install cluster-1 temporalio/temporal --version 0.68.1 \
       -f helm/temporal-values.yaml
 fi
